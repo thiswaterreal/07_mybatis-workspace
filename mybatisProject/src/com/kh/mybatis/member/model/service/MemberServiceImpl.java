@@ -33,8 +33,8 @@ public class MemberServiceImpl implements MemberService { //implements MemberSer
 		SqlSession sqlSession = Template.getSqlSession();
 								// 이때 mybatis-config.xml 문서를 읽어들임 ***
 								// 이때 등록시킨 mapper.xml 문서들도 다 읽어들여짐 ***
-								// 안녕하세요 저는 이호우옌입니다
-								// 저는 너무 귀여워서 고민이에호우예뉴ㅠ
+								// 이때 등록시킨 별칭들도 다 읽어들여짐
+								// (이때 DB에 접속해서 접근통로 생성)
 		
 		int result = mDao.insertMember(sqlSession, m); // dao에서 쿼리 돌려야하니까 sqlSession주고, 구멍 채우기 위해 m도 넘겨
 		if(result > 0) {

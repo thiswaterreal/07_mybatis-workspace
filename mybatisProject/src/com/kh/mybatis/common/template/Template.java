@@ -43,7 +43,7 @@ public class Template { //JDBCTemplate
 		
 		try {
 			
-			//글쿤(늘 적는 것) : mybatis-config.xml파일 읽어들이는 통로
+			//글쿤(늘 적는 것) : Resource소스폴더에 접근해서 mybatis-config.xml파일 읽어들이는 통로
 			InputStream stream = Resources.getResourceAsStream(resource);
 			sqlSession = new SqlSessionFactoryBuilder().build(stream).openSession(false);
 								// openSession() : 기본값은 false

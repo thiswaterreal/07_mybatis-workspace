@@ -15,7 +15,6 @@
 		* SELECT문 일 경우(숫자,문자,어떤객체)
 		<select id="각 sql문 식별자(맘대로지어요)" [parameterType="전달받을 자바타입(풀클래스명)|별칭"] 
 				resultType="조회결과를반환하고자하는자바타입(int,String,..)"|resultMap="조회결과를뽑아서매핑할resultMap">
-		
 		</select>
 		
 	 -->
@@ -27,7 +26,7 @@
 	 	  ResultSet 으로부터 조회된 컬럼값 하나씩 뽑아서 내가 지정한 vo객체의 각 필드에 담는(매핑) 역할 수행
 	 	  => JDBC 코드를 줄여주는 역할 수행
 	 	  
-	 	  <resultMap id="식별자" type="조회결과를 담아서 반환하고자 하는 vo객체의 타입(풀클래스명)|별칭">
+	 	  <resultMap id="식별자(맘대로지어요)" type="조회결과를 담아서 반환하고자 하는 vo객체의 타입(풀클래스명)|별칭">
 	 	  		<result column="조회결과를 뽑고자 하는 DB컬럼명" property="해당 결과를 담고자 하는 필드명" />
 	 	  		<result column="조회결과를 뽑고자 하는 DB컬럼명" property="해당 결과를 담고자 하는 필드명" />
 	 	  		<result column="조회결과를 뽑고자 하는 DB컬럼명" property="해당 결과를 담고자 하는 필드명" />
@@ -40,7 +39,7 @@
 	 <!-- 	
 	 		Dao에서
 	 		int result = sqlSession.insert("memberMapper.insertMember", m);
-	 		Member m 전달받았으니까 parameterType=""
+	 		Member m 전달받았으니까 parameterType="Member"
 	 		mybatis-config.xml 에서 별칭 등록하기 전에는 복잡하게 요래 써야했음
 	 <insert id="insertMember" parameterType="com.kh.mybatis.member.model.vo.Member"> -->
 	 <insert id="insertMember" parameterType="Member">
@@ -73,9 +72,9 @@
 	 
 	 
 	 <!--
-	 <resultMap type="com.kh.mybatis.member.model.vo.Member" id=""> -->
-	 <resultMap type="Member" id="memberResultSet">
-	 		<!-- column : 대/소문자 안가림 | property : 키값(name)정확히! -->
+	 <resultMap id="memberResultSet" type="com.kh.mybatis.member.model.vo.Member"> -->
+	 <resultMap id="memberResultSet" type="Member">
+	 		<!-- column : 대/소문자 안가림 | property : vo 필드명 정확히! -->
 	 		<result column="USER_NO" property="userNo" />
 	 		<result column="USER_ID" property="userId" />
 	 		<result column="USER_PWD" property="userPwd" />
@@ -91,7 +90,7 @@
 	 </resultMap>
 	 
 	 
-	 <select id="loginMember" resultMap="memberResultSet" parameterType="Member">
+	 <select id="loginMember" parameterType="Member" resultMap="memberResultSet">
 	 select
 	        user_no
 	      , user_id

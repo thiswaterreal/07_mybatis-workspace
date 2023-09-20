@@ -45,7 +45,7 @@ public class MemberDao {
 	
 	public Member loginMember(SqlSession sqlSession, Member m) {
 		
-		// selectOne 메소드 : 조회결과가 만약 없다면 null 반환
+		// selectOne 메소드 : 조회결과가 무조건 하나일 때! 조회결과가 만약 없다면 null 반환
 		Member loginMember = sqlSession.selectOne("memberMapper.loginMember", m);
 		return loginMember;
 		//(한줄로) return sqlSession.selectOne("memberMapper.loginMember", m);

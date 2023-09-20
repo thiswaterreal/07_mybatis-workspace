@@ -44,7 +44,7 @@ public class MemberInsertController extends HttpServlet {
 		// 방법1) 매개변수생성자 새로 맹글
 		Member m = new Member(userId, userPwd, userName, email, birthday, gender, phone, address);
 	
-		int result = new MemberServiceImpl().insertMember(m); //인터페이스 설계시 정해둔 약속! (주렁주렁말고 m보내기로)
+		int result = new MemberServiceImpl().insertMember(m); // 서비스 인터페이스 설계시 정해둔 약속! (주렁주렁말고 m보내기로)
 		
 		if(result > 0) { // 성공 => 메인페이지
 

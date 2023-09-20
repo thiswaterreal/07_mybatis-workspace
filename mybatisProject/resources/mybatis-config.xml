@@ -3,7 +3,6 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
-  
 <configuration>
 
 	<!-- setting : mybatis 구동시 선언할 설정들을 작성하는 영역 -->
@@ -14,9 +13,10 @@
 
 	<!-- typeAliases : VO/DTO 클래스들의 풀클래스명을 단순한 클래스명으로 사용하기 위해서 '별칭'을 등록할 수 있는 영역 -->
 	<typeAliases>
+		<typeAlias type="com.kh.mybatis.member.model.vo.Member" alias="Member"/>
 	</typeAliases>
 	
-	<!-- enbrionment : mybatis에서 연동할 DB 정보들을 등록하는 영역 -->
+	<!-- enbrionment : mybatis에서 연동할 DB 정보들을 등록하는 영역 (development 각 팀마다 다를 것) -->
 	<environments default="development">
 		<environment id="development">
 			<!-- 
@@ -36,6 +36,7 @@
 					- UNPOOLED	: 사용하지 않겠다.
 			 -->
 			<dataSource type="POOLED">
+				<!-- ojdbc6 등록해야 가능(등록해야 여기서 제공해주는 driver패키지의 클래스들을 사용 가능한 것임) -->
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
 				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
 				<property name="username" value="mybatis"/>
@@ -46,6 +47,11 @@
 	
 	<!-- * mapper : 실행할 sql문들을 기록해둔 mapper 파일들을 등록하는 영역 -->
 	<mappers>
+		<!-- 반드시 resources폴더가 소스폴더여야 가능!! -->
+		<!-- <mapper resource="/resources/mappers/member-mapper.xml" /> 가넝!! -->
+		<mapper resource="/mappers/member-mapper.xml" />
 	</mappers>	
+	
+	
 	
 </configuration>

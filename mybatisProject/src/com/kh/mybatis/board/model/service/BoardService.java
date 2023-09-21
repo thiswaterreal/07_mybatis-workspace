@@ -11,11 +11,11 @@ public interface BoardService { // interface임
 	
 	// ***** 클래스 설계 *****
 	
-	// 게시판 리스트 조회
+	// 게시판 리스트 조회 (/list.bo)
 	int selectListCount();
 	ArrayList<Board> selectList(PageInfo pi);
 
-	// 게시판 상세 조회
+	// 게시판 상세 조회 (/detail.bo)
 	int increaseCount(int boardNo);
 	Board selectBoard(int boardNo);
 	ArrayList<Reply> selectReplyList(int boardNo); // (+ 댓글)

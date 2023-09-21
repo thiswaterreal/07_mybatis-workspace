@@ -40,7 +40,7 @@ public class BoardListController extends HttpServlet {
 		int currentPage = Integer.parseInt(request.getParameter("cpage")); // cpage 키값 달고 현재페이지 번호 넘어온거 담아
 		
 		PageInfo pi = Pagination.getPageInfo(listCount, currentPage, 10, 5);
-																	 // 페이징바 몇개, 한페이지당 게시글 몇개
+																	 // 페이징바 몇개, 한페이지당 게시글 몇개 (pageLimit, boardLimit)
 		//System.out.println(pi);
 		
 		ArrayList<Board> list = new BoardServiceImpl().selectList(pi);

@@ -15,7 +15,9 @@ public class BoardServiceImpl implements BoardService { //implements BoardServic
 
 	BoardDao bDao = new BoardDao();
 	
-	@Override
+	// ************* 게시글 리스트 **************
+	
+	@Override // 페이징바 listCount 값 구하기 위해
 	public int selectListCount() {
 		
 		SqlSession sqlSession = /*Template.*/getSqlSession();
@@ -26,7 +28,7 @@ public class BoardServiceImpl implements BoardService { //implements BoardServic
 		
 	}
 
-	@Override
+	@Override // 한 페이지당 조회될 게시글리스트
 	public ArrayList<Board> selectList(PageInfo pi) {
 
 		SqlSession sqlSession = getSqlSession();
@@ -37,6 +39,8 @@ public class BoardServiceImpl implements BoardService { //implements BoardServic
 	
 	}
 
+	// ************* 상세페이지 **************
+	
 	@Override
 	public int increaseCount(int boardNo) {
 		
@@ -75,7 +79,9 @@ public class BoardServiceImpl implements BoardService { //implements BoardServic
 		
 	}
 
-	@Override
+	// ************* 게시글 검색 **************
+	
+	@Override // 현재 검색결과에 맞는 게시글 총 개수 (알아야 페이징처리하니까)
 	public int selectSearchCount(HashMap<String, String> map) {
 
 		SqlSession sqlSession = getSqlSession();

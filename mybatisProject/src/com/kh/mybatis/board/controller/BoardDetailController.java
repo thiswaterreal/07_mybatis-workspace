@@ -43,7 +43,7 @@ public class BoardDetailController extends HttpServlet {
 		// 1. 조회수 증가시키는 서비스
 		int result = bService.increaseCount(boardNo);
 		
-		if(result > 0) { // **조회수 증가해야 상세글 조회 가능**
+		if(result > 0) { // **조회수 증가해야 => 상세글 조회 가능**
 			// 2. 해당 게시글 상세 조회 서비스
 			Board b = bService.selectBoard(boardNo);
 			

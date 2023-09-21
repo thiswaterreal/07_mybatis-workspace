@@ -48,7 +48,7 @@ public class BoardSearchController extends HttpServlet {
 		
 		// 편하게 전역으로
 		BoardServiceImpl bService = new BoardServiceImpl();
-		int searchCount = bService.selectSearchCount(map);	// 현재 검색결과에 맞는 게시글 총 개수 (알아야 페이징처리하니까)
+		int searchCount = bService.selectSearchCount(map);		// 현재 검색결과에 맞는 게시글 총 개수 (알아야 페이징처리하니까)
 		int currentPage = Integer.parseInt(request.getParameter("cpage"));
 		
 		PageInfo pi = Pagination.getPageInfo(searchCount, currentPage, 10, 5);

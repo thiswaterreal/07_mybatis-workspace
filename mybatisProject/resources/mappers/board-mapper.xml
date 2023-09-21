@@ -79,7 +79,7 @@
 	        by reply_no desc
 	</select>
 	
-	<select id="selectSearchCount" resultType="_int">	<!-- 사실.. parameterType 안써줘도 잘 돌아..ㅎ -->
+	<select id="selectSearchCount" resultType="_int" parameterType="string">	<!-- 사실.. parameterType 안써줘도 잘 돌아..ㅎ -->
 		select
 		       count(*)
 		  from board b
@@ -97,7 +97,7 @@
 	       	   	like '%' || #{keyword} || '%'
 	</select>
 	
-	<select id="selectSearchList" resultMap="boardResultSet">
+	<select id="selectSearchList" resultMap="boardResultSet" parameterType="string">
 		select
 		        board_no
 		      , board_title

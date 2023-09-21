@@ -14,7 +14,7 @@
 
 		* SELECT문 일 경우(숫자,문자,어떤객체)
 		<select id="각 sql문 식별자(맘대로지어요)" [parameterType="전달받을 자바타입(풀클래스명)|별칭"] 
-				resultType="조회결과를반환하고자하는자바타입(int,String,..)"|resultMap="조회결과를뽑아서매핑할resultMap">
+				resultType="조회결과를반환하고자하는자바타입(int,String,..)"|resultMap="조회결과를뽑아서매핑할resultMap(Member객체)">
 		</select>
 		
 	 -->

@@ -42,7 +42,7 @@
     color: white;
     margin: auto;
     margin-top: 50px;
-    height: 450px;
+    height: 600px;
 }
 
 </style>

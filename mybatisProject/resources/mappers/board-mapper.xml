@@ -123,6 +123,13 @@
 		    by board_no desc
 	</select>
 	
+	<update id="deleteBoard">
+		        update
+			   board
+		   set status = 'N'
+		 where board_no = #{boardNo}
+	</update>
+	
 	
 	
 	

@@ -58,6 +58,9 @@ public class BoardSearchController extends HttpServlet {
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
 		
+		request.setAttribute("condition", condition);
+		request.setAttribute("keyword", keyword);
+		
 		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp").forward(request, response); // 재요청해도 상관없음
 		
 	

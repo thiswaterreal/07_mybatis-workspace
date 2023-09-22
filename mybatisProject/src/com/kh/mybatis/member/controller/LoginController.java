@@ -30,8 +30,6 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
-		
 		String userId = request.getParameter("userId");
 		String userPwd = request.getParameter("userPwd");
 	
@@ -41,6 +39,8 @@ public class LoginController extends HttpServlet {
 		m.setUserPwd(userPwd);
 		
 		Member loginMember = new MemberServiceImpl().loginMember(m);
+		
+		System.out.println(loginMember);
 		
 		if(loginMember == null) { // 로그인 실패
 			

@@ -44,8 +44,12 @@
                 <td height="100">${ b.boardContent }</td>
             </tr>
         </table>
-
-        <br>
+		<br>
+		
+		<c:if test="${ loginMember.userId eq b.boardWriter }">
+			<button onclick="location.href='delete.bo?bno=${ b.boardNo }'">삭제</button>
+		</c:if>
+        <br><br>
 
         <table align="center" border="1">
             <tr>

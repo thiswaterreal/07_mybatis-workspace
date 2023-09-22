@@ -102,6 +102,25 @@ public class BoardServiceImpl implements BoardService { //implements BoardServic
 		sqlSession.close();
 		return list;
 	}
+
+	
+	// ************* 게시글 삭제 **************
+	
+	@Override
+	public int deleteBoard(int boardNo) {
+		
+		SqlSession sqlSession = getSqlSession();
+		int result = bDao.deleteBoard(sqlSession, boardNo);
+				
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		
+		return result;		
+				
+	}
 	
 
 

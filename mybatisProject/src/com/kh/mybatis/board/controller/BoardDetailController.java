@@ -53,6 +53,8 @@ public class BoardDetailController extends HttpServlet {
 			request.setAttribute("b", b);
 			request.setAttribute("list", list);
 			
+			System.out.println(b);
+			
 			request.getRequestDispatcher("WEB-INF/views/board/boardDetailView.jsp").forward(request, response);
 			
 		}else {

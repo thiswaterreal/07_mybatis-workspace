@@ -44,9 +44,11 @@ public class MemberUpdateController extends HttpServlet {
 	
 		if(updateMem != null) {
 			request.getSession().setAttribute("loginMember", updateMem);
+			request.getSession().setAttribute("alertMsg", "성공적으로 회원정보 수정 완료!");
+			
 			response.sendRedirect(request.getContextPath() + "/myPage.me");
 		}else {
-			request.setAttribute("errorMsg", "회원정보 변경 실패");
+			request.setAttribute("errorMsg", "회원정보 변경 실패!");
 			request.getRequestDispatcher("WEB-INF/views/common/errorPage.jsp").forward(request, response);
 		}
 	}

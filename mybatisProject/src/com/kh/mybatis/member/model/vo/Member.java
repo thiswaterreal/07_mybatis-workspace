@@ -34,6 +34,19 @@ public class Member {
 		this.address = address;
 	}
 
+	
+	// updateMember용 (비밀번호변경제외)
+	public Member(String userId, String userName, String email, String birthday, String gender, String phone,
+			String address) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.email = email;
+		this.birthday = birthday;
+		this.gender = gender;
+		this.phone = phone;
+		this.address = address;
+	}
 
 
 	public Member(int userNo, String userId, String userPwd, String userName, String email, String birthday,

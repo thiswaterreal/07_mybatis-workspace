@@ -59,9 +59,24 @@ public class MemberServiceImpl implements MemberService { //implements MemberSer
 	}
 
 	@Override
-	public int updateMember(Member m) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Member updateMember(Member m) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = mDao.updateMember(sqlSession, m);
+		
+		Member updateMem = null;
+		
+		if(result > 0) {
+			sqlSession.commit();
+			
+			// 갱신된 회원 객체 다시 조회 (id들고)
+			updateMem = mDao.selectMember(sqlSession, m.getUserId());
+		}
+		
+		sqlSession.close();
+		
+		return updateMem;
+		
 	}
 
 	@Override

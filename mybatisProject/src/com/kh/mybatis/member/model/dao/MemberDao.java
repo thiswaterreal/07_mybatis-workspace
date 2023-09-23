@@ -53,4 +53,16 @@ public class MemberDao {
 	}
 	
 	
+	public int updateMember(SqlSession sqlSession, Member m) {
+		
+		return sqlSession.update("memberMapper.updateMember", m);
+		
+	}
+	
+	public Member selectMember(SqlSession sqlSession, String userId) {
+		
+		return sqlSession.selectOne("memberMapper.selectMember", userId);
+	}
+	
+	
 }

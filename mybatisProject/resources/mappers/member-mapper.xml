@@ -33,8 +33,7 @@
 	 	  		<result column="조회결과를 뽑고자 하는 DB컬럼명" property="해당 결과를 담고자 하는 필드명" />
 	 	  </resultMap>	 	  
 	  -->
-	 
-	 
+	
 	 
 	 <!-- 	
 	 		Dao에서
@@ -109,6 +108,37 @@
 	    and user_pwd = #{userPwd}
 	    and status = 'Y'
 	 </select>
+	 
+	 <update id="updateMember">
+	 	update member
+	 	   set user_name = #{userName}
+		     , email = #{email}
+		     , birthday = #{birthday}
+		     , gender = #{gender}
+		     , phone = #{phone}
+		     , address = #{address}
+		 where user_id = #{userId}
+	 </update>
+	 
+	 <select id="selectMember" resultMap="memberResultSet">
+		 select
+		        user_no
+		      , user_id
+		      , user_pwd
+		      , user_name
+		      , email
+		      , birthday
+		      , gender
+		      , phone
+		      , address
+		      , enroll_date
+		      , modify_date
+		      , status
+		   from member
+		  where user_id = #{userId}
+		    and status = 'Y'
+	 </select>
+	 
 	 
 	 
 </mapper>

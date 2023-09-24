@@ -7,7 +7,7 @@ public class Board {
 	 private int boardNo;
 	 private String boardTitle;
 	 private String boardContent;
-	 private String boardWriter;
+	 private String boardWriter; 	// String userId로 표시됨 | join member m on (board_writer = user_no)
 	 private int count;
 	 private Date createDate;
 	 private String status;

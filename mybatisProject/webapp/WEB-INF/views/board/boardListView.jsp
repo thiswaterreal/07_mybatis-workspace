@@ -42,7 +42,8 @@
 		<br>
 		<h1 align="center">게시판</h1>
 		<br>
-
+		
+		<!-- 생각 생각 생각 -->
 		<div id="search-area">
 			<form action="search.bo" method="get">
 				<!-- hidden -->
@@ -57,13 +58,15 @@
 			</form>
 		</div>
 		
-		<c:if test="${ not empty condition }">
+		<c:if test="${ not empty condition }">	<!-- condition: writer|title|content -->
 			<script>
 				$(function(){
 					$("#search-area option[value=${ condition }]").attr("selected", true); // 검색 후 condition 처리
 				})
 			</script>
 		</c:if>
+		
+		
 		
 		<br>
 

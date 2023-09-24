@@ -38,8 +38,7 @@ public class BoardDeleteController extends HttpServlet {
 		
 		if(result > 0) { // 성공
 
-			//HttpSession session =  request.getSession();
-			//session.setAttribute("alertMsg", "성공적으로 게시글이 삭제 되었습니다.");
+			//request.getSession().setAttribute("alertMsg", "성공적으로 게시글이 삭제 되었습니다.");
 			
 			response.sendRedirect(request.getContextPath() + "/list.bo?cpage=1"); //cpage 주는거 잊지말루~!!
 			
